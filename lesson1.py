@@ -100,7 +100,6 @@ for line in result_param_you.stdout:
     line = line.decode(result_1['encoding']).encode('utf-8')
     print(line.decode('utf-8'))
 
-
 # Задание 6
 
 from chardet import detect
@@ -116,5 +115,5 @@ print('encoding :', encoding)
 with open('test_file.txt', encoding=encoding) as f_n:
     for el_str in f_n:
         print(el_str, end='')
-    print()
+
 
