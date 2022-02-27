@@ -20,27 +20,34 @@ print(decorator_simbol)
 
 # Задание 2
 
-class_1 = b'class'
-print(class_1)
-print(type(class_1))
-print(len(class_1))
+var_1 = 'class'
+var_2 = 'function'
+var_3 = 'method'
 
-function_1 = b'function'
-print(function_1)
-print(type(function_1))
-print(len(function_1))
+words = [var_1, var_2, var_3]
 
-method_1 = b'method'
-print(method_1)
-print(type(method_1))
-print(len(method_1))
+for el_str in words:
+    el = eval(b'el_str')
+    print(type(el))
+    print(el)
+    print(len(el))
 
 # Задание 3
 
-attribute_1 = b'attribute'
-# class_2 = b'класс'   #  невозможно записать , тк они не вкходят в таблицу ASCII
-# function_1 = b'функция'  #  невозможно записать , тк они не вкходят в таблицу ASCII
-type_1 = b'type'
+var_1 = 'attribute'
+var_2 = 'класс'
+var_3 = 'функция'
+var_4 = 'type'
+
+var_list = [var_1, var_2, var_3, var_4]
+
+for word in var_list:
+    try:
+        word.encode('ascii')
+    except UnicodeEncodeError:
+        print(f' Слово "{word}" невозможно записать в виде байтовой строки')
+
+# Задание 4
 
 development_1 = 'разработка'
 development_1_str = str.encode(development_1, encoding='utf-8')
@@ -57,8 +64,6 @@ print(protocol_str)
 standard = 'standard'
 standard_str = str.encode(standard, encoding='utf-8')
 print(standard_str)
-
-# Задание 4
 
 development_b = b'\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430'
 development_dec = bytes.decode(development_b, encoding='utf-8')
